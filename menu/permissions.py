@@ -15,12 +15,10 @@ class IsOrderOwnerOrAdmin(permissions.BasePermission):
     
 
 class CanDeactivateOrder(BasePermission):
-    """Проверяет право на деактивацию заказа"""
     def has_permission(self, request, view):
         return request.user.has_perm('orders.can_deactivate_order')
 
 class CanViewAllOrders(BasePermission):
-    """Проверяет право на просмотр всех заказов"""
     def has_permission(self, request, view):
         return request.user.has_perm('orders.can_view_all_orders')
 
